@@ -118,7 +118,7 @@ if (process.env.NODE_ENV === 'production') {
                 NODE_ENV: '"production"'
             }
         }),
-        new webpack.optimize.UglifyJsPlugin()({
+        new webpack.optimize.UglifyJsPlugin({
             //sourceMap: true,  build 是否输出map内容
             sourceMap: false,
             compress: {
