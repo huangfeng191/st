@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <input value="全屏" type='button' onclick='toggleFullScreen();' />  
+</body>
+<script>
+  function toggleFullScreen() {  
+    if (!document.fullscreenElement && // alternative standard method  
+        !document.mozFullScreenElement && !document.webkitFullscreenElement) {// current working methods  
+        if (document.documentElement.requestFullscreen) {  
+            document.documentElement.requestFullscreen();  
+        } else if (document.documentElement.mozRequestFullScreen) {  
+            document.documentElement.mozRequestFullScreen();  
+        } else if (document.documentElement.webkitRequestFullscreen) {  
+            document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);  
+        }  
+    } else {  
+        if (document.cancelFullScreen) {  
+            document.cancelFullScreen();  
+        } else if (document.mozCancelFullScreen) {  
+            document.mozCancelFullScreen();  
+        } else if (document.webkitCancelFullScreen) {  
+            document.webkitCancelFullScreen();  
+        }  
+    }  
+}  
+</script>
+</html>

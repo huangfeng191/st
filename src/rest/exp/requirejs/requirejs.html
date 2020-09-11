@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<!--目前为止可以知道requirejs具有如下优点：-->
+<!--防止js加载阻塞页面渲染-->
+<!--使用程序调用的方式加载js，防出现如下丑陋的场景-->
+<html>
+<head>
+	<script src="r.js"></script>
+	<!--<script type="text/javascript" src="b.js"></script>-->
+	<script>
+		require(["b"]);
+	</script>
+
+</head>
+<body>
+<span>body</span>
+</body>
+</html>

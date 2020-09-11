@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- st           测试闭包
+     bindMethods  事件动态绑定
+Author wujj
+Date : ${dt}
+-->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+
+	<script src="js/vue.js"></script>
+	<script src="js/jquery-3.2.1.js"></script>
+</head>
+<body>
+<input type="button" value="cs" id="cs"/>
+<input type="button" value="cs1" id="cs1"/>
+<div id="cs11">
+	<input type="button" value="按钮" @click="bindMethods"/>
+	{{aa}}
+</div>
+
+</body>
+<script>
+    window.onload = function () {
+        new Vue({
+            el: "#cs11",
+            data(){
+                return {"aa": "aa1a"}
+            },
+            methods: {
+                st(){// test 闭包
+                    function cs(arg) {
+                        var c = arg;
+                        return function (p) {
+                            console.log((c++) + p)
+                        }
+                    }
+
+                    var fn = cs(1);
+                },
+// 事件动态绑定
+                bindMethods(){
+                    var Button_All = {}
+
+                    function cs(arg) {
+
+                        var c = arg;
+                        return function () {
+                            
+                            console.log((c++))
+                        }
+                    }
+
+                    var Arr = []
+                    for (var i = 0, Arr = $("input"), len = 2; i < len; i++) {
+//                        jQuery(Arr[i]).click(cs(1)); 绑定事件写法
+//						将绑定的事件的对象，绑定给属性                                   绑定事件
+//                        Button_All[jQuery(Arr[i]).attr("id")] = jQuery(Arr[i]).on("click",cs(1));
+
+                        Button_All[jQuery(Arr[i]).attr("id")] = jQuery(Arr[i]);
+                        jQuery(Arr[i]).on("click", cs(1));
+                    }
+
+                    
+                }
+            },
+            mounted(){
+//             this.st();
+
+            }
+        })
+    }
+
+</script>
+
+
+</html>

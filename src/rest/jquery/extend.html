@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+ jquery 测试扩展
+ -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="../../static/jquery-3.2.1.js"></script>
+
+</head>
+<script>
+//	上述的extend方法原型中的dest参数是可以省略的，如果省略了，
+//	 则该方法就只能有一个src参数，而且是将该src合并到调用extend方法的对象中去，
+//	 如：  1、$.extend(src)  　　该方法就是将src合并到jquery的全局对象中去，如：
+//jQuery.extend(object); 为扩展jQuery类本身，为自身添加新的方法。
+//        jQuery.fn.extend(object);给jQuery对象添加方法
+//***** 扩展用  $.fn.
+    $.fn.extend({
+        cs: function () {
+            console.log("11")
+        }
+    })
+    $.extend({
+        hello: function () {
+            console.log("hello")
+        }
+    });
+
+</script>
+<body>
+12
+<input type="button" value="cs" id="cs"/>
+
+</body>
+</html>

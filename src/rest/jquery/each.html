@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+ jquery
+  $.each 循环
+  对象.each 以每一个匹配的元素作为上下文来执行一个函数。
+ -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="../../static/jquery-3.2.1.js"></script>
+</head>
+<script>
+
+    $.fn.hdform = function (methods) {
+//    此处this 是一个数组对象
+        var k = this;
+        
+        return this.each(function (i, v) {
+            
+        })
+
+    }
+
+    function getform() {
+        $("input").hdform();
+    };
+
+    $(function () {
+        
+        // 相当于类的静态方法
+        $.each($("input"), function (i, v) {
+            this.value = i;
+
+        });
+        $("input").on("click",function(){
+            
+            alert(this.value);
+        })
+    })
+
+
+</script>
+<body>
+
+<input type="button" value="cs1" id="cs" onclick="getform()"/>
+<input type="button" value="cs2" id="cs1"/>
+<input type="button" value="cs3" id="cs2"/>
+<input type="button" value="cs4" id="cs3"/>
+
+</body>
+</html>

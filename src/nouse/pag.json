@@ -1,0 +1,39 @@
+{
+  "name": "webapp-platform",
+  "version": "1.0.0",
+  "description": "前端集成框架",
+  "main": "app.js",
+  "scripts": {
+    "dev": "fis3 release dev -w -c -d ../",
+    "pro": "fis3 release prod -d ../"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^2.2.4",
+    "vue-router": "^2.3.0",
+    "vuex": "^2.2.1",
+    "vue-stash":"^2.0.1-beta",
+    "font-awesome": "^4.7.0",
+    "element-thin-ui": "^1.0.3",
+    "element-ui":"^1.2.4",
+    "wangeditor":"^2.1.23",
+    "echarts":"^3.5.3",
+    "highcharts": "^5.0.10"
+  },
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "fis3-deploy-skip-packed": "^0.0.5",
+    "fis3-parser-vueify": "^0.1.3",
+    "fis3-parser-less2": "^0.1.3",
+    "fis3-hook-commonjs": "^0.1.26",
+    "fis3-hook-node_modules": "^2.2.8",
+    "fis3-postpackager-loader": "^2.1.4",
+    "fis3-postpackager-uglify-packto": "^1.0.2",
+    "fis3-postprocessor-autoprefixer": "^1.0.0",
+    "fis-parser-babel-5.x": "^1.1.0",
+    "fis3-preprocessor-js-require-css": "^0.1.1",
+    "fis3-preprocessor-js-require-file": "^0.1.3",
+    "minimatch":"^3.0.3",
+    "process": "^0.11.9"
+  }
+}

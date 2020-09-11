@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+   View 然后一个 对象
+
+ -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="../static/jquery-3.2.1.js"></script>
+</head>
+<script>
+
+    $(function () {
+        
+        $.each($("input"), function (i, v) {
+            this.value = i;
+
+        })
+    })
+</script>
+<body>
+
+<input type="button" value="cs1" id="cs"/>
+<input type="button" value="cs2" id="cs1"/>
+<input type="button" value="cs3" id="cs2"/>
+<input type="button" value="cs4" id="cs3"/>
+
+</body>
+</html>

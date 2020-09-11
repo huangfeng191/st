@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Basic ComboTree - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+</head>
+<body>
+	<h2>Basic ComboTree</h2>
+	<p>Click the right arrow button to show the tree panel.</p>
+	<div style="margin:20px 0"></div>
+	<div class="easyui-panel" style="width:100%;max-width:400px;padding:30px 60px;">
+		<div style="margin-bottom:20px">
+			<input id="cs111"  style="width:100%">
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+
+
+
+
+
+	var Items=[{
+    "id": 1,
+    "text": "Node 1",
+    "state": "closed",
+    "children": [{
+        "id": 11,
+        "text": "Node 11"
+    },{
+        "id": 12,
+        "text": "Node 12"
+    }]
+},{
+    "id": 2,
+    "text": "Node 2",
+    "state": "closed"
+}];
+
+
+$("#cs111").combotree({
+            data: Items,
+            onSelect: function (record) {
+               
+            },
+            checkbox: false,
+            editable: true,
+            panelHeight: 250,
+            onLoadSuccess: function (node, data) {
+                var t = $(this);
+                if (data) {
+                    $(data).each(function (index, d) {
+                    	
+                        if (this.state == 'closed') {
+                            t.tree('expandAll');
+                        }
+                    });
+                }
+            }
+        });
+
+
+</script>
+</html>

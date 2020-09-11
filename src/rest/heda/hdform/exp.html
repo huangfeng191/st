@@ -1,0 +1,77 @@
+<%inherit file="layout.html" />
+<div id='detail'>
+
+</div>
+<script>
+    function Load(Args) {
+
+
+                var inp1 = [
+                    [
+                        {"Field": "sn", "Name": "设备编2121222222222221212码:", DataType: "String", ShowType: "checkbox", Ext: "", "Required": true, RowSpan: 1, ColSpan: 1},
+                    ],[
+                        {"Field": "nm", "Name": "设备12112121212121212编码:", DataType: "String", ShowType: "checkbox", Ext: "", "Required": true, RowSpan: 1, ColSpan: 1},
+
+                    ],[
+                        {"Field": "nm", "Name": "设备12112121212121212编码:", DataType: "String", ShowType: "checkbox", Ext: "", "Required": true, RowSpan: 1, ColSpan: 1},
+
+                    ],[
+                        {"Field": "nm", "Name": "设备12112121212121212编码:", DataType: "String", ShowType: "checkbox", Ext: "", "Required": true, RowSpan: 1, ColSpan: 1},
+
+                    ]
+
+                    ];
+
+// hdform html 模板
+                var form = [
+
+                        {"Inputs": inp1},
+                        {"Html": `
+                            <table>
+                                <tr>
+                                    <td class="label"  style='text-align: left; '>执法情况:</td>
+                                </tr>
+                                <tr>
+                                    <td class="content" >
+                                        <div class="">
+                                            <textarea  style='width: 96%;' class="default"></textarea>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>`
+                        }
+        ]
+        $("#detail").hdform({
+            Form: form,
+            AfterClear: function () {
+
+            },
+            AfterDisable: function () {
+
+            },
+            AfterEnable: function () {
+
+            },
+            AfterRender: function (dom, opt) {
+                dom.find(".label").css("text-align","left") ;
+                var h=0;
+                
+                $("div.group").each(function (i, e) {
+                   h += $(e).height();
+                });
+                MyDialog.Reset({  Height: h + 65 });
+
+                dom.find("button[command=cancel]").click(function (Evt) {
+                    MyDialog.Close();
+                });
+            }
+        })
+    };
+
+    $(function () {
+
+
+    });
+
+
+</script>
