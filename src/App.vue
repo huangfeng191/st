@@ -11,7 +11,7 @@
             <router-link to="/test">test</router-link>
             <router-link to="/mycolor">获取颜色</router-link>
             <router-link to="/mystock">维护页面</router-link>
-            <router-link to="/usejsonyz">鄞州配置</router-link>
+            <router-link to="/usejsonyz">yz配置</router-link>
             <router-link to="/usejsonstock">stock配置</router-link>
             <router-link to="/usejsonss">usejsonSS</router-link>
               <router-link to="/map">map</router-link>

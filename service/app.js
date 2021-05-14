@@ -9,6 +9,7 @@ const logger = require('koa-logger')
 const index = require('./routes/index')
 const users = require('./routes/users')
 const mystock = require('./routes/mystock')
+const my_remote=require('./routes/remoteBasic')
 // error handler
 onerror(app)
 
@@ -40,5 +41,7 @@ app.use(async (ctx, next) => {
 app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
 app.use(mystock.routes(), users.allowedMethods())
+app.use(my_remote.routes(),my_remote.allowedMethods())
+
 
 module.exports = app

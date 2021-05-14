@@ -36,7 +36,7 @@ export default {
       selected: "",
       types: [
         {
-          label: "鄞州txt倒叙",
+          label: "yztxt倒叙",
           value: 1,
           input: `var c=\`param1\`;
 var d=c.split("\\n").reverse();
