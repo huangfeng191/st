@@ -95,6 +95,11 @@ module.exports = {
                 changeOrigin: true,
                 secure: false
             },
+            '/get/*': {
+                target: 'http://localhost:3333',
+                changeOrigin: true,
+                secure: false
+            },
             '/baoxing/*': {
                 target: 'http://localhost:8083',
                 changeOrigin: true,

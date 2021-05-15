@@ -17,6 +17,16 @@ async function body(body) {
   });
 }
 
+
+async function getBasic(body) {
+   console.log(body);
+   await Remote_info.find();
+   return new Promise(function (resolve, reject) {
+      resolve("ok");
+  });
+}
+
 module.exports = {
-   "body": body
+   "body": body,
+   "getBasic":getBasic
 }

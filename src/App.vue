@@ -14,6 +14,7 @@
             <router-link to="/usejsonyz">yz配置</router-link>
             <router-link to="/usejsonstock">stock配置</router-link>
             <router-link to="/usejsonss">usejsonSS</router-link>
+               <router-link to="/ip">ip</router-link>
               <router-link to="/map">map</router-link>
         </div>
         <router-view></router-view>

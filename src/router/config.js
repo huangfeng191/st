@@ -22,6 +22,8 @@ import ToJsonTest from '../customs/public/tojsontest.vue'
 import ToJsonStock from '../customs/public/UseJsonStock.vue'
 import UseJsonSS from '../customs/public/UseJsonSS.vue'
 import EchartsMap from '../customs/echarts/map.vue'
+
+import Ip from "../customs/utility/ip.vue"
 export default{
 	routes:[
 		{path:'/cs', component:Cs},
@@ -40,6 +42,7 @@ export default{
 		{path:'/mycolor', component:Mycolor},
 		{path:'/usejsonstock', component:ToJsonStock},
 		{path:'/map', component:EchartsMap},
+		{path:'/ip', component:Ip},
 		{path:'*', redirect:'/mystock'}
 	]
 }

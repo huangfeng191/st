@@ -5,12 +5,13 @@ const saveBasic = require('../customs/remote/saveBasic')
 router.post('/upload/basic',async  (ctx, next)=> {
     let body = ctx.request.body;
     console.log("11")
-    // let id =ctx.request.body.id || 0;
-    //ctx.body = "you post data:"+JSON.stringify({id:id});
-    
-      ctx.body  = await saveBasic.body(body);
+    ctx.body  = await saveBasic.body(body);
+});
 
-
+//post 请求
+router.post('/get/basic',async  (ctx, next)=> {
+  let body = ctx.request.body;
+  ctx.body  = await saveBasic.getBasic(body);
 });
 
 
