@@ -20,7 +20,7 @@ import UseJsona from '../customs/public/usejsona.vue'
 import UseJsonYZ from '../customs/public/usejsonYZ.vue'
 import ToJsonTest from '../customs/public/tojsonTest.vue'
 import ToJsonStock from '../customs/public/usejsonStock.vue'
-import UseJsonSS from '../customs/public/UseJsonSS.vue'
+import UseJsonSS from '../customs/public/usejsonSS.vue'
 import EchartsMap from '../customs/echarts/map.vue'
 
 import Ip from "../customs/utility/ip.vue"
