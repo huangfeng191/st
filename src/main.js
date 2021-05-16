@@ -1,4 +1,5 @@
 import Vue from 'vue'
+require("./utils/date")
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import App from './App.vue'

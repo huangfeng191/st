@@ -20,10 +20,8 @@ async function body(body) {
 
 async function getBasic(body) {
    console.log(body);
-   await Remote_info.find();
-   return new Promise(function (resolve, reject) {
-      resolve("ok");
-  });
+  
+   return  await Remote_info.find().limit(10).sort({"changed":1}).exec();
 }
 
 module.exports = {
