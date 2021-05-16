@@ -62,7 +62,7 @@ export default {
   },
   methods: {
     doAlter(data){
-      debugger
+      
       if(data.length>0){
           data[0].alter="true"
       };
