@@ -96,7 +96,8 @@ module.exports = {
                 secure: false
             },
             '/get/*': {
-                target: 'http://localhost:3333',
+                // target: 'http://localhost:3333',
+                target: 'https://xyzdogoli.xyz',
                 changeOrigin: true,
                 secure: false
             },

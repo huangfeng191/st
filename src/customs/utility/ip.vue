@@ -5,6 +5,7 @@
       style="margin-top:30px;margin-bottom:30px;"  
       placeholder="Please input"
       v-model="lastIp"
+      id="lastIp"
     ></el-input>
 
     <el-table
@@ -76,6 +77,20 @@ export default {
         })
       }
     },
+    
+    copyToClipBoard:function(id){ //复制到剪切板
+      if(document.execCommand){
+        var e=document.getElementById(id).getElementsByTagName("input")[0];
+        e.select();
+        document.execCommand("Copy");
+        return true;
+      }
+      if(window.clipboardData){
+            window.clipboardData.setData("Text", e.value);
+            return true;
+      }
+      return false;
+    },
     getIp() {
       axios.post("/get/basic").then((res) => {
         res.data.forEach(function (v) {
@@ -111,6 +126,10 @@ export default {
           return y.day.localeCompare(x.day )        });
         if(res.data.length>0){
             this.lastIp=res.data[0].ip;
+            this.$nextTick(function(){
+               this.copyToClipBoard("lastIp")
+            })
+
             
         }
         
