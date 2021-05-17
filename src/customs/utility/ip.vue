@@ -12,7 +12,7 @@
 
   </el-col>
   <el-col :span="4">
-    <el-button @click="copyToClipBoard('lastIp')"  type="primary" style="margin-top:30px;margin-bottom:30px;"  >复制</el-button> 
+    <el-button @click="copyToClipBoard('lastIp')" id='toCopy'  type="primary" style="margin-top:30px;margin-bottom:30px;"  >复制</el-button> 
   </el-col>
 </el-row>
 
@@ -90,6 +90,7 @@ export default {
     },
     
     copyToClipBoard:function(id){ //复制到剪切板
+    
       if(document.execCommand){
         var copyText=document.getElementById(id).getElementsByTagName("input")[0];
         /* Select the text field */
@@ -140,6 +141,9 @@ export default {
             this.lastIp=res.data[0].ip;
             this.$nextTick(function(){
               this.copyToClipBoard("lastIp")
+              setTimeout(() => {
+                document.getElementById("toCopy").click();
+              }, 1000);
             })
             
 
