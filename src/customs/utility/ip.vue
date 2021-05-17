@@ -1,12 +1,23 @@
 <template>
   <div>
     
+    <el-row>
+  <el-col :span="4">
     <el-input
       style="margin-top:30px;margin-bottom:30px;"  
       placeholder="Please input"
       v-model="lastIp"
       id="lastIp"
-    ></el-input>
+    ></el-input>  
+
+  </el-col>
+  <el-col :span="4">
+    <el-button @click="copyToClipBoard('lastIp')"  type="primary" style="margin-top:30px;margin-bottom:30px;"  >复制</el-button> 
+  </el-col>
+</el-row>
+
+  
+   
 
     <el-table
       :data="tableData"
