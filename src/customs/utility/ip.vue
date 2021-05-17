@@ -141,7 +141,8 @@ export default {
             this.lastIp=res.data[0].ip;
             this.$nextTick(function(){
               this.copyToClipBoard("lastIp")
-       
+              
+            })
             
 
             
