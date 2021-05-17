@@ -10,6 +10,7 @@
   copy scope 里面对为空不替换需要支持。
   考虑设置一个优化版本
 */
+import $ from 'jquery'
 import ToJson from "./tojson.vue";
 export default {
   props: {},

@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import $ from 'jquery'
 import ToJson from "./tojson.vue";
 export default {
   props: {},

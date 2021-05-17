@@ -56,6 +56,7 @@
 }
 </style>
 <script>
+import $ from 'jquery'
 export default {
   props: ["types", "selected"],
   data() {
