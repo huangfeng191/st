@@ -80,15 +80,16 @@ export default {
     
     copyToClipBoard:function(id){ //复制到剪切板
       if(document.execCommand){
-        var e=document.getElementById(id).getElementsByTagName("input")[0];
-        e.select();
-        document.execCommand("Copy");
+        var copyText=document.getElementById(id).getElementsByTagName("input")[0];
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
         return true;
       }
-      if(window.clipboardData){
-            window.clipboardData.setData("Text", e.value);
-            return true;
-      }
+     
       return false;
     },
     getIp() {
@@ -127,8 +128,9 @@ export default {
         if(res.data.length>0){
             this.lastIp=res.data[0].ip;
             this.$nextTick(function(){
-               this.copyToClipBoard("lastIp")
+              this.copyToClipBoard("lastIp")
             })
+            
 
             
         }
