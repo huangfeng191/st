@@ -141,10 +141,7 @@ export default {
             this.lastIp=res.data[0].ip;
             this.$nextTick(function(){
               this.copyToClipBoard("lastIp")
-              setTimeout(() => {
-                document.getElementById("toCopy").click();
-              }, 1000);
-            })
+       
             
 
             
